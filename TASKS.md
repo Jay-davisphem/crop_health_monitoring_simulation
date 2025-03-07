@@ -68,7 +68,7 @@ This project simulates crop growth under varying environmental conditions. The c
 ## 6. ml_model.py
 **Purpose:** Predict crop health using a machine learning model.  
 **Responsibilities:**
-- Set up a `RandomForestRegressor` model.
+- Set up a `RandomForestRegressor` or `others` model.
 - Train the model on historical simulation data logged in the CSV file.
 - Provide predictions based on current environmental conditions.
 
