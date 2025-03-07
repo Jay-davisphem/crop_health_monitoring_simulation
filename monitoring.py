@@ -1,21 +1,17 @@
+from crop import Crop
 class MonitoringSystem:
-    def __init__(self, crop):
-        """
-        Initialize the monitoring system with a Crop object.
-        :param crop: Instance of Crop.
-        """
+    def __init__(self, crop: Crop):
+        # Initialize with a Crop instance
         self.crop = crop
 
     def check_health_status(self):
-        """
-        Check crop health and return a status message.
-        TODO: Return a warning if health is below a critical threshold, otherwise indicate stability.
-        """
-        pass
+        # Check crop health and return an alert message if needed
+        health = self.crop.get_health()
+        if health < 50:
+            return "⚠️ Warning: Crop health is critical!"
+        else:
+            return "✅ Crop health is stable."
 
     def get_status_report(self):
-        """
-        Get a report of current crop health and alert status.
-        TODO: Return a dictionary with 'crop_health' and 'alert' status.
-        """
-        pass
+        # Return a status report with current health and alert
+        return {"crop_health": self.crop.get_health(), "alert": self.check_health_status()}

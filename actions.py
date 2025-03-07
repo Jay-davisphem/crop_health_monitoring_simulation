@@ -1,30 +1,22 @@
+# actions.py
+
 class Actions:
     def __init__(self, environment, crop):
-        """
-        Initialize actions with the environment and crop objects.
-        :param environment: Instance of Environment.
-        :param crop: Instance of Crop.
-        """
+        # Initialize with Environment and Crop instances
         self.environment = environment
         self.crop = crop
-
+    
     def water_crops(self):
-        """
-        Water the crops to increase humidity.
-        TODO: Implement logic to increase the humidity and return a descriptive message.
-        """
-        pass
-
+        # Increase humidity by watering the crops
+        self.environment.humidity += 10
+        return "💧 Watered crops, increasing humidity."
+    
     def apply_pesticide(self):
-        """
-        Apply pesticide to reduce pest levels.
-        TODO: Implement logic to decrease pest level and return a descriptive message.
-        """
-        pass
-
+        # Decrease pest level by applying pesticide
+        self.environment.pest_level = max(0, self.environment.pest_level - 3)
+        return "🛡️ Pesticide applied, reducing pest level."
+    
     def apply_fertilizer(self):
-        """
-        Apply fertilizer to boost crop health.
-        TODO: Increase crop health and return a descriptive message.
-        """
-        pass
+        # Boost crop health by applying fertilizer
+        self.crop.health = min(100, self.crop.health + 5)
+        return "🌱 Fertilizer applied, boosting crop health."
