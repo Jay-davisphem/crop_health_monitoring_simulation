@@ -145,9 +145,9 @@ This project simulates crop growth under varying environmental conditions. The c
 
 ---
 
-**13. Slide Presentation Task**
+## 13. Slide Presentation Task
 
-- **Objective:**  
+**Objective:**  
   Create a slide presentation (using Microsoft PowerPoint or Google Slides) that showcases the Crop Health Monitoring Simulation.
 
 - **Content to Include:**  
