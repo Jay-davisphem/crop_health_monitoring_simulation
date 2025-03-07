@@ -44,7 +44,7 @@ pip install -r requirements.txt
 python main.py
 
 # Visualizing Data
-python -c "from visualization import DataVisualization; DataVisualization().plot_data('simulation_data.csv')"
+python -c "from visualization import DataVisualization; DataVisualization().plot_data('synthetic_crop_data_10000_uniform.csv')"
 
 # Deactivating the Virtual Environment
 deactivate
