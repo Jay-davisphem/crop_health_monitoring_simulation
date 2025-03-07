@@ -160,4 +160,4 @@ The Crop Simulation Project is an integrated system where:
 
 This modular design allows for easy maintenance and scalability, making it possible to add new features or modify existing ones without impacting the entire system. Each file has a clearly defined role, ensuring that team members can work independently on different parts while understanding how they fit into the overall project.
 
-Happy coding, and feel free to ask if you need any more details, daviSPhem!
+Happy coding, and feel free to ask in the whatsapp group if you need any more details!
