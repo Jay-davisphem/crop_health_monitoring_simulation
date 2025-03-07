@@ -145,4 +145,25 @@ This project simulates crop growth under varying environmental conditions. The c
 
 ---
 
-Feel free to update and expand these modules as needed. Happy coding!
+**13. Slide Presentation Task**
+
+- **Objective:**  
+  Create a slide presentation (using Microsoft PowerPoint or Google Slides) that showcases the Crop Health Monitoring Simulation.
+
+- **Content to Include:**  
+  - **Title Slide:** Project title, tagline, presenter name(s), and date.  
+  - **Overview:**  
+    - Describe the simulation’s purpose (monitoring crop health based on environmental conditions).  
+    - **Note:** Explain that initially, the simulation was run without ML, and later ML was integrated to predict crop health—demonstrating how ML complements and enhances the DES (Discrete Event Simulation) system as taught in class.
+  - **Architecture:**  
+    - Use a diagram or bullet points to outline key modules (environment, crop, monitoring, actions, data logging, ML prediction, visualization, simulation, configuration, utilities, and logging).
+  - **Key Features:**  
+    - Detail how the simulation updates conditions, manages crop health, triggers actions, logs data, and integrates ML for predictions.
+    - Use Discrete Event Simulation terms.
+  - **Results:**  
+    - Present example outputs (screenshots, graphs, alerts).
+  - **Future Enhancements:**  
+    - List potential improvements.
+  - **Conclusion & Q&A:**  
+    - Summarize the project
+---
