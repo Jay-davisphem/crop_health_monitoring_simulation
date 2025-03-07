@@ -1,4 +1,3 @@
-# generate_dataset_10000_uniform.py
 import csv
 import random
 
