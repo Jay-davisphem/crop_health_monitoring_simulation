@@ -1,6 +1,6 @@
-# Crop Simulation Project
+# Crop Health Monitoring Simulation Project
 
-This project simulates crop growth under varying environmental conditions. The code is modularized into 12 independent components, each responsible for a specific part of the simulation. Below is an overview of each module with a description of its purpose and tasks to accomplish.
+This project simulates crop health under varying environmental conditions. The code is modularized into 12 independent components, each responsible for a specific part of the simulation. Below is an overview of each module with a description of its purpose and tasks to accomplish.
 
 ## 1. environment.py
 **Purpose:** Simulate environmental conditions affecting the crop.  
