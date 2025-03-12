@@ -43,8 +43,10 @@ pip install -r requirements.txt
 # Running simulation
 python main.py
 
-# Visualizing Data
+# Visualizing Data, Three scatter plots (Crop Health vs. Temperature, Humidity, and Pest Level).
 python -c "from visualization import DataVisualization; DataVisualization().plot_data('synthetic_crop_data_10000_uniform.csv')"
+# OR, if using the pair plot:
+python -c "from visualization import DataVisualization; DataVisualization().plot_pairplot('synthetic_crop_data_10000_uniform.csv')"
 
 # Deactivating the Virtual Environment
 deactivate
@@ -96,10 +98,18 @@ The Crop Simulation Project is designed to simulate monitoring of crop health un
    - Using the data logged in the CSV file, this module trains a `RandomForestRegressor` model to predict future crop health based on current environmental conditions.
    - This predictive capability helps forecast trends and can be used to proactively adjust interventions.
 
-8. **Data Visualization:**  
-   - The `visualization.py` module contains the `DataVisualization` class.
-   - It reads the CSV data and produces visual representations (like plots of crop health over time) using matplotlib.
-   - Visualization aids in understanding simulation trends and the impact of various factors over time.
+8. **Data Visualization**
+   The `visualization.py` module is responsible for analyzing and visually representing the relationship between environmental factors and crop health. It contains the DataVisualization class, which processes simulation data stored in a CSV file and generates insightful plots to reveal trends and correlations.
+   - Key Features:
+      - Data Loading: Reads environmental and crop health data from a CSV file.
+      - Graphical Analysis: Uses Matplotlib and Seaborn to create meaningful visualizations of how temperature, humidity, and pest levels affect crop health.
+      - Exploratory Data Analysis (EDA): Helps in understanding trends, outliers, and potential relationships between variables.
+   - Visualization Capabilities:
+      - Scatter Plots: Show the effect of individual factors (temperature, humidity, pest level) on crop health.
+      - Heatmaps: Display correlations between different environmental variables and crop health.
+      - Pair Plots: Provide a multi-variable comparison for deeper insights.
+
+   By leveraging this module, users can identify patterns, assess risk factors, and make data-driven decisions to optimize crop health. 🚀
 
 9. **Central Simulation Loop:**  
    - The `simulation.py` module acts as the central orchestrator.

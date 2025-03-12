@@ -78,16 +78,14 @@ This project simulates crop health under varying environmental conditions. The c
 
 ---
 
-## 7. visualization.py
-**Purpose:** Visualize the simulation data.  
-**Responsibilities:**
-- Read the CSV log file.
-- Plot trends such as crop health over time using matplotlib.
+## 7. visualization.py  
+**Purpose:** Visualize simulation data from the CSV log.  
 
-**TODO:**  
-- Implement the `plot_data` function to read data and generate plots.
+### Tasks:  
+- Read and process the CSV data.  
+- Plot the impact of temperature, humidity, and pest level on crop health.  
+- Use Seaborn/Matplotlib for effective visualization.  
 
----
 
 ## 8. simulation.py
 **Purpose:** Integrate all components into a cohesive simulation loop.  

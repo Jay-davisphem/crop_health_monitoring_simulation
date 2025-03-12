@@ -1,5 +1,3 @@
-# actions.py
-
 class Actions:
     def __init__(self, environment, crop):
         # Initialize with Environment and Crop instances
