@@ -1,29 +1,44 @@
 import os
 import pandas as pd
-from sklearn.ensemble import RandomForestRegressor
+import numpy as np
+from sklearn.ensemble import VotingRegressor, RandomForestRegressor, GradientBoostingRegressor
+from sklearn.svm import SVR
+# from xgboost import XGBRegressor  # Optional: Requires xgboost install
 
 class CropHealthPredictor:
     def __init__(self, data_file="synthetic_crop_data_10000_uniform.csv"):
-        """
-        Initialize the machine learning model.
-        TODO: Setup RandomForestRegressor and train the model if data is available.
-        """
-        self.model = RandomForestRegressor()
+        # Define base models
+        self.models = [
+            ('rf', RandomForestRegressor(n_estimators=100)),
+            # ('xgb', XGBRegressor(n_estimators=100)),  # Optional
+            ('gbr', GradientBoostingRegressor(n_estimators=100)),
+            ('svr', SVR(kernel='rbf', C=100))
+        ]
+        
+        # Initialize Voting Regressor (averaging predictions)
+        self.model = VotingRegressor(estimators=self.models)
+        
         self.data_file = data_file
         self.is_trained = False
-        pass
+        if os.path.exists(self.data_file) and os.stat(self.data_file).st_size > 0:
+            self.train()
 
     def train(self):
-        """
-        Train the model using logged simulation data.
-        TODO: Load the CSV data, train the model, and update the training status.
-        """
-        pass
+        df = pd.read_csv(self.data_file)
+        if df.empty:
+            print("⚠️ Warning: No data available for training.")
+            return
+        
+        X = df.iloc[:, :-1]
+        y = df.iloc[:, -1]
+        
+        self.model.fit(X, y)
+        self.is_trained = True
 
     def predict(self, conditions):
-        """
-        Predict crop health based on current environmental conditions.
-        TODO: Return the predicted crop health.
-        :param conditions: List or array of environmental values.
-        """
-        pass
+        if not self.is_trained:
+            print("⚠️ Warning: Model is not trained yet.")
+            return 100
+        
+        conditions_df = pd.DataFrame([conditions])
+        return self.model.predict(conditions_df)[0]  # [0] to return scalar

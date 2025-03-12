@@ -4,23 +4,37 @@ import random
 class Environment:
     def __init__(self):
         """
-        Initialize default environmental conditions.
-        TODO: Set initial temperature, humidity, and pest_level.
+        Initialize default environmental conditions using values from config.
         """
-        self.temperature = config.INITIAL_TEMPERATURE  # Example default
-        self.humidity = config.INITIAL_HUMIDITY     # Example default
-        self.pest_level = config.INITIAL_PEST_LEVEL    # Example default
+        self.temperature = config.INITIAL_TEMPERATURE
+        self.humidity = config.INITIAL_HUMIDITY
+        self.pest_level = config.INITIAL_PEST_LEVEL
 
     def update_conditions(self):
         """
-        Update environmental conditions with random fluctuations.
-        TODO: Implement logic to adjust temperature, humidity, and pest_level.
+        Randomly fluctuate the environmental conditions based on configurable ranges.
         """
-        pass
+        # Fluctuate temperature using the configured range
+        self.temperature += random.uniform(config.TEMP_FLUCTUATION_MIN, config.TEMP_FLUCTUATION_MAX)
+        
+        # Fluctuate humidity usingpr the configured range
+        self.humidity += random.uniform(config.HUMIDITY_FLUCTUATION_MIN, config.HUMIDITY_FLUCTUATION_MAX)
+        
+        # Fluctuate pest level (ensuring it stays between 0 and 10)
+        self.pest_level = max(
+            0,
+            min(
+                10,
+                self.pest_level + random.choice(config.PEST_LEVEL_FLUCTUATIONS)
+            )
+        )
 
     def get_conditions(self):
         """
-        Return current environmental conditions as a dictionary.
-        TODO: Return a dict with keys: 'temperature', 'humidity', 'pest_level'.
+        Return the current environmental conditions as a dictionary.
         """
-        pass
+        return {
+            "temperature": self.temperature,
+            "humidity": self.humidity,
+            "pest_level": self.pest_level
+        }
