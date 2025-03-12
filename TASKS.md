@@ -1,6 +1,6 @@
-# Crop Simulation Project
+# Crop Health Monitoring Simulation Project
 
-This project simulates crop growth under varying environmental conditions. The code is modularized into 12 independent components, each responsible for a specific part of the simulation. Below is an overview of each module with a description of its purpose and tasks to accomplish.
+This project simulates crop health under varying environmental conditions. The code is modularized into 12 independent components, each responsible for a specific part of the simulation. Below is an overview of each module with a description of its purpose and tasks to accomplish.
 
 ## 1. environment.py
 **Purpose:** Simulate environmental conditions affecting the crop.  
@@ -144,8 +144,15 @@ This project simulates crop growth under varying environmental conditions. The c
 - Code the `log_error` function to capture and report errors.
 
 ---
+## 13. Dataset Sourcing
+**Responsibilities**
+Find dataset that will include, temperature, humidity, pest_control and crop_health.
+Presently, I included a heuristic (generated based on some patterns) based dataset.
 
-## 13. Slide Presentation Task
+NOTE: the field names(the ones you find) might be a bit different from the project's.
+
+---
+## 14. Slide Presentation Task
 
 **Objective:**  
   Create a slide presentation (using Microsoft PowerPoint or Google Slides) that showcases the Crop Health Monitoring Simulation.

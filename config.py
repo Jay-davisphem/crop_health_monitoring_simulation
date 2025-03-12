@@ -1,5 +1,5 @@
 # Simulation parameters
-SIMULATION_DURATION = 500  # Total simulation time in time units
+SIMULATION_DURATION = 5000  # Total simulation time in time units
 UPDATE_INTERVAL = 1       # Time step interval
 
 # Crop initial health
@@ -29,6 +29,10 @@ HUMIDITY_BONUS = 2              # Health bonus for optimal humidity
 # Pest level thresholds and adjustments
 PEST_THRESHOLD = 7              # Above this level, crop suffers
 PEST_PENALTY = 10               # Health penalty for high pest level
+
+# Temperature bounds (adjust based on your region)
+MIN_TEMPERATURE = 0
+MAX_TEMPERATURE = 50
 
 # Fluctuation ranges for environmental conditions
 TEMP_FLUCTUATION_MIN = -2

@@ -40,5 +40,13 @@ class CropHealthPredictor:
             print("⚠️ Warning: Model is not trained yet.")
             return 100
         
+        # Ensure the input is a dictionary with correct keys
+        if not isinstance(conditions, dict):
+            print("❌ Error: Conditions must be a dictionary.")
+            return 100
+        
+        # Ensure all values are numeric
+        conditions = {k: float(v) for k, v in conditions.items() if v is not None}
+
         conditions_df = pd.DataFrame([conditions])
-        return self.model.predict(conditions_df)[0]  # [0] to return scalar
+        return self.model.predict(conditions_df)[0]

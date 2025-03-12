@@ -62,8 +62,8 @@ class Simulation:
 
                 # Use the ML model to predict crop health if it's trained, and log the prediction
                 if self.ml_model.is_trained:
-                    features = pd.DataFrame([current_conditions])
-                    predicted_health = self.ml_model.predict(features)
+                    # features = pd.DataFrame([current_conditions])
+                    predicted_health = self.ml_model.predict(current_conditions)
                     self.log.info(f"🔮 Predicted Crop Health: {predicted_health}")
 
                 # Advance the simulation by one time unit
